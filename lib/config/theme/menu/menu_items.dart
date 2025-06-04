@@ -19,7 +19,7 @@ class MenuItems {
   MenuItems(
     title: 'Tarjetas',
     subtitle: 'Un contador estilizado',
-    link: '/card',
+    link: '/cards',
     icon: Icons.credit_card
   ),
 
