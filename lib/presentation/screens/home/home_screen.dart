@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/theme/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,9 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter + Material 3'),
-      ),
+      appBar: AppBar(title: Text('Flutter + Material 3')),
       body: const _HomeView(),
     );
   }
@@ -17,7 +16,6 @@ class HomeScreen extends StatelessWidget {
 
 class _HomeView extends StatelessWidget {
   const _HomeView();
-  
 
   @override
   Widget build(BuildContext context) {
@@ -32,25 +30,23 @@ class _HomeView extends StatelessWidget {
 }
 
 class _CustomListTile extends StatelessWidget {
-  const _CustomListTile({
-    required this.menuItem,
-  });
+  const _CustomListTile({required this.menuItem});
 
   final MenuItems menuItem;
 
   @override
   Widget build(BuildContext context) {
-
     final colors = Theme.of(context).colorScheme;
 
     return ListTile(
       leading: Icon(menuItem.icon, color: colors.primary),
-      trailing: Icon(Icons.arrow_forward_ios_rounded, color:colors.primary),
+      trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary),
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subtitle),
-      onTap: (){
-        Navigator.pushNamed(context, menuItem.link);
-      }
+      onTap: () {
+        //Navigator.pushNamed(context, menuItem.link);
+        context.push(menuItem.link);
+      },
     );
   }
 }
