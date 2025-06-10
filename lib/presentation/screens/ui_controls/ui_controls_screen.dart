@@ -86,7 +86,6 @@ class _UiControlsViewState extends State<_UiControlsView> {
             ),
           ],
         ),
-        //TODO: por aquí
         CheckboxListTile(
           title: Text('¿Desayuno?'),
           value: wantsBreakfast,
